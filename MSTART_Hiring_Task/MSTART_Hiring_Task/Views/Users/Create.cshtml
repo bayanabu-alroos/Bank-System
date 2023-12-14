@@ -1,0 +1,80 @@
+﻿@model UsersCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h3 class="mb-4">Create User</h3>
+                <form asp-action="Create" method="post">
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="email" class="form-control" asp-for="Email">
+                            <label for="floatingInput" asp-for="Email"></label>
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="UserName">
+                            <label for="floatingInput" asp-for="UserName"></label>
+                            <span class="text-danger" asp-validation-for="UserName"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="First_Name">
+                            <label for="floatingInput" asp-for="First_Name"></label>
+                            <span class="text-danger" asp-validation-for="First_Name"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="Last_Name">
+                            <label for="floatingInput" asp-for="Last_Name"></label>
+                            <span class="text-danger" asp-validation-for="Last_Name"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="date" class="form-control" asp-for="Date_Of_Birth">
+                            <label for="floatingInput" asp-for="Date_Of_Birth"></label>
+                            <span class="text-danger" asp-validation-for="Date_Of_Birth"></span>
+
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="PhoneNumber">
+                            <label for="floatingInput" asp-for="PhoneNumber"></label>
+                            <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Status",Html.GetEnumSelectList<UserStatus>(),"--Choose User Status --",new{@class="form-select "})
+                            <label for="floatingSelect" asp-for="Status"></label>
+                            <span class="text-danger" asp-validation-for="Status"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Gender",Html.GetEnumSelectList<Gender>(),"--Choose Gender --",new{@class="form-select "})
+                            <label for="floatingSelect" asp-for="Gender"></label>
+                            <span class="text-danger" asp-validation-for="Gender"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="password" class="form-control" asp-for="Password">
+                            <label for="floatingSelect" asp-for="Password"></label>
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="password" class="form-control" asp-for="ConfirmPassword">
+                            <label for="floatingSelect" asp-for="ConfirmPassword"></label>
+                            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-success m-2 " type="submit">Create User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

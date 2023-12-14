@@ -1,0 +1,79 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h3 class="mb-4">Update User</h3>
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+                <form asp-action="Edit" method="post">
+                    @Html.HiddenFor(m=>m.Id)
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="email" class="form-control" asp-for="Email">
+                            <label for="floatingInput" asp-for="Email"></label>
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="UserName">
+                            <label for="floatingInput" asp-for="UserName"></label>
+                            <span class="text-danger" asp-validation-for="UserName"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="First_Name">
+                            <label for="floatingInput" asp-for="First_Name"></label>
+                            <span class="text-danger" asp-validation-for="First_Name"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="Last_Name">
+                            <label for="floatingInput" asp-for="Last_Name"></label>
+                            <span class="text-danger" asp-validation-for="Last_Name"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="date" class="form-control" asp-for="Date_Of_Birth">
+                            <label for="floatingInput" asp-for="Date_Of_Birth"></label>
+                            <span class="text-danger" asp-validation-for="Date_Of_Birth"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="PhoneNumber">
+                            <label for="floatingInput" asp-for="PhoneNumber"></label>
+                            <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Status",Html.GetEnumSelectList<UserStatus>(),"--Choose User Status --",new{@class="form-select"})
+                            <label class="form-label" asp-for="Status"></label>
+                            <span class="text-danger" asp-validation-for="Status"></span>
+                        </div>
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Gender",Html.GetEnumSelectList<Gender>(),"--Choose Gender --",new{@class="form-select" })
+                            <label for="floatingInput" asp-for="Gender"></label>
+                            <span class="text-danger" asp-validation-for="Gender"></span>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" name="action" value="save" class="btn btn-primary">Save </button>
+                    <button type="submit" name="action" value="continue" class="btn btn-secondary">Save & Continue</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

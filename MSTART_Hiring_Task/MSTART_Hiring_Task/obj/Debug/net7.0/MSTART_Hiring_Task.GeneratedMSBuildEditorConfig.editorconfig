@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MSTART_Hiring_Task
+build_property.RootNamespace = MSTART_Hiring_Task
+build_property.ProjectDir = C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Accounts/AccountNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQWNjb3VudE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Accounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Accounts/ViewAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcVmlld0FjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/EditRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0Um9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/EditUserInRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0VXNlckluUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/NotFoundRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3RGb3VuZFJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/RolesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSb2xlc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Home/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Shared/_LayoutAuth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBdXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Transactions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Transactions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Transactions/ReverseTransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXFJldmVyc2VUcmFuc2FjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Transactions/TransactionNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25zXFRyYW5zYWN0aW9uTm90Rm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Users/UserNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVXNlck5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Users/ViewUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVmlld1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bayan/Desktop/Bayan/C\# Training/Bank-System/MSTART_Hiring_Task/MSTART_Hiring_Task/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-x90dy5ce1y

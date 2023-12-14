@@ -1,0 +1,60 @@
+﻿@model TransactionViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h3 class="mb-4">Create Transaction</h3>
+                <div class="row g-3">
+                    <div class="col form-floating mb-3">
+                        <input type="text" id="accountNumberInput" class="form-control" asp-for="Account_Id" placeholder="Enter Account Number" />
+                        <label asp-for="Account_Id" for="floatingSelect"> </label>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col form-floating mb-3">
+                        <input type="text" asp-for="User_Id" class="form-control" id="userNameInput" readonly name="UserId" />
+                        <label for="userNameInput" asp-for="User_Id">User Name</label>
+                    </div>
+                </div>
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="All" class=" alert-danger"></div>
+                    <input type="hidden" id="userIdInput" asp-for="User_Id">
+                    <input type="hidden" id="accountIdInput" asp-for="Account_Id">
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="Amount">
+                            <label for="floatingInput" asp-for="Amount"></label>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Status",Html.GetEnumSelectList<TransactionStatus>(),"--Choose Account Status --",new{@class="form-select "})
+                            <label for="floatingSelect" asp-for="Status"></label>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Type",Html.GetEnumSelectList<TransactionType>(),"--Choose Transaction Type --",new{@class="form-select "})
+                            <label for="floatingSelect" asp-for="Type"></label>
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-lg btn-success m-2 " type="submit">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script src="~/js/script.js"></script>
+

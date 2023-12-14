@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Transaction>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@functions {
+    public string GetStatusClass(TransactionStatus status)
+    {
+        switch (status)
+        {
+            case TransactionStatus.Completed:
+                return "text-success";
+            case TransactionStatus.Reversed:
+                return "text-danger";
+            default:
+                return "text-info"; // Default class or another Bootstrap text class
+        }
+    }
+}
+
+
+<!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h3 class="mb-0"> List of Transactions </h3>
+            <form class="d-flex mt-3 mb-4" asp-action="Index" method="get">
+                <input class="form-control me-1" type="search" name="searchTerm" placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-success" type="submit" value="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        <div class="table-responsive">
+            <a asp-action="Create" asp-controller="Transactions" class="btn btn-outline-success  mb-5">
+                Create New Transaction
+            </a>
+            <!-- Button trigger modal -->
+
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">#</th>
+                        <th scope="col">@Html.DisplayNameFor(m=>m.User) </th>
+                        <th scope="col">@Html.DisplayNameFor(m=>m.Account) </th>
+                        <th scope="col">@Html.DisplayNameFor(m=>m.Amount) </th>
+                        <th scope="col">@Html.DisplayNameFor(m=>m.Type) </th>
+                        <th scope="col">@Html.DisplayNameFor(m=>m.Status) </th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in Model)
+                    {
+                        <tr>
+                            <th scope="row">
+                                <label class="form-check-label">@transaction.Id</label>
+                            </th>
+                            <th scope="row">
+                                @if (transaction.User != null)
+                                {
+                                    @:@transaction.User.First_Name @transaction.User.Last_Name
+                                }
+                                else
+                                {
+                                    @:No associated user
+                                }
+                                
+
+                            </th>
+                            <th scope="row">@transaction.Account.Account_Number</th>
+                            <th scope="row">@transaction.Amount</th>
+                            <th scope="row">@transaction.Type</th>
+                            <th scope="row" class="@GetStatusClass(transaction.Status)">@transaction.Status</th>
+                            <th>
+                                <a asp-action="ReverseTransaction" asp-controller="Transactions" asp-route-id="@transaction.Id"
+                                   class="btn btn-outline-warning">Reverse Transaction</a>
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <!-- Modal -->
+
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
+

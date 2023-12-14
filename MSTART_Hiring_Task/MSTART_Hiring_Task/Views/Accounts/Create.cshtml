@@ -1,0 +1,52 @@
+﻿@model AccountViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h3 class="mb-4">Create Account</h3>
+                <form asp-action="Create" method="post">
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="Account_Number">
+                            <label for="floatingInput" asp-for="Account_Number"></label>
+                            <span class="text-danger" asp-validation-for="Account_Number"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="Balance">
+                            <label for="floatingInput" asp-for="Balance"></label>
+                            <span class="text-danger" asp-validation-for="Balance"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownListFor(model => model.Currency, (IEnumerable<SelectListItem>)ViewBag.Currencies, "Select a currency", new { @class = "form-select" })
+                            <label for="floatingInput" asp-for="Currency"></label>
+                            <span class="text-danger" asp-validation-for="Currency"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("Status",Html.GetEnumSelectList<AccountStatus>(),"--Choose Account Status --",new{@class="form-select "})
+                            <label for="floatingSelect" asp-for="Status"></label>
+                            <span class="text-danger" asp-validation-for="Status"></span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            @Html.DropDownList("User_ID", (IEnumerable<SelectListItem>)ViewBag.UsersName, "Choose an User", new { @class = "form-select "})
+                            <label for="floatingSelect" asp-for="User_ID"></label>
+                            <span class="text-danger" asp-validation-for="User_ID"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-success m-2 " type="submit">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,210 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> _signInManager
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/styles-ltr.css" rel="stylesheet">
+    @{
+        var currentCulture = Thread.CurrentThread.CurrentCulture.Name;
+    }
+    @if (currentCulture == "ar-JO")
+    {
+        <link href="~/css/styles-rtl.css" rel="stylesheet">
+    }
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand mx-4 mb-3">
+                    <p class="text-primary"><i class="fa fa-user-edit me-2"></i>@_localization.Getkey("str-title")</p>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="~/img/user.png" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">@User.Identity.Name</h6>
+                        <span>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <p>@_localization.Getkey("str-welcomeadmin") </p>
+                                }
+                                else if (User.IsInRole("User"))
+                                {
+                                    <p>@_localization.Getkey("str-welcomeuser")</p>
+                                }
+                            }
+                        </span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-users me-2"></i>@_localization.Getkey("str-users")
+                        </a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a asp-controller="Users" asp-action="Index" class="dropdown-item">@_localization.Getkey("str-userslist")</a>
+                            <a asp-controller="Users" asp-action="Create" class="dropdown-item">@_localization.Getkey("str-createuser")</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-list-alt"></i>
+                            @_localization.Getkey("str-accounts")
+                        </a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a asp-controller="Accounts" asp-action="Index" class="dropdown-item">
+                                @_localization.Getkey("str-listofaccounts") 
+                            </a>
+                            <a asp-controller="Accounts" asp-action="Create" class="dropdown-item">
+                                @_localization.Getkey("str-createaccount")  
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-list-alt"></i>
+                            @_localization.Getkey("str-transactions")
+                        </a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a asp-controller="Transactions" asp-action="Index" class="dropdown-item">
+                                @_localization.Getkey("str-listoftransactions")
+                            </a>
+                            <a asp-action="Create" asp-controller="Transactions" class="dropdown-item">
+                                @_localization.Getkey("str-createtransactions")
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-users me-2"></i>
+                            @_localization.Getkey("str-rolesusers")
+                        </a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a asp-controller="Home" asp-action="RolesList" class="dropdown-item">
+                                @_localization.Getkey("str-listrolesusers")
+                            </a>
+                            <a asp-action="CreateRole" asp-controller="Home" class="dropdown-item">
+                                @_localization.Getkey("str-createrole")
+
+                            </a>
+                        </div>
+                    </div>
+                    <a asp-controller="Home" asp-action="UserProfile" class="nav-link" >
+                        <i class="fa fa-user me-2"></i>
+                        User Profile 
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                                <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                                <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+                            </svg>
+                            <span class="d-none d-lg-inline-flex">@_localization.Getkey("str-languages")</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ar-JO"
+                               class="dropdown-item">
+                                <img alt="العربية" title="العربية"
+                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEqSURBVHjaYvzPgAD/GBiYaxkY/oARkPMLzPiFwgAIwKG80wAAwlAADAnq0MNWGTipvfcpheWmmy9GNGUPey/RkskiWwP6mhDy5BVAYA0M//8/ecrw9y8QPfj8++/fv7//A9UBFYHIX39//fr3C8iQ5ZEF2gAQQCxgs/9DVAOVrXRe+R8HYGRkfKj6ECCAWIBOZQSqBjuB4fef/7gByJP//gEEENhJf0BmE9bAyPjnzx+AAAI76S/I+P+/f+HXwAi2BCCAwE4CGv/rF8hVv37hcQ+QBDoJIIBAGphBxv9m+A0KG2tr61+/fv3+/RtKgll//vz+8+eviorKxYsXAQIIpIHp9x8GSUmQnj9/Zf78hgCgcyEkEPyFAaA9AAHE+BUcp3AkzEAAAAQYAHrGaQbZnz4fAAAAAElFTkSuQmCC">
+                                @_localization.Getkey("str-arabic")
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US"
+                               class="dropdown-item">
+                                <img alt="English" title="English"
+                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHzSURBVHjaYkxOP8IAB//+Mfz7w8Dwi4HhP5CcJb/n/7evb16/APL/gRFQDiAAw3JuAgAIBEDQ/iswEERjGzBQLEru97ll0g0+3HvqMn1SpqlqGsZMsZsIe0SICA5gt5a/AGIEarCPtFh+6N/ffwxA9OvP/7//QYwff/6fZahmePeB4dNHhi+fGb59Y4zyvHHmCEAAAW3YDzQYaJJ93a+vX79aVf58//69fvEPlpIfnz59+vDhw7t37968efP3b/SXL59OnjwIEEAsDP+YgY53b2b89++/awvLn98MDi2cVxl+/vl6mituCtBghi9f/v/48e/XL86krj9XzwEEEENy8g6gu22rfn78+NGs5Ofr16+ZC58+fvyYwX8rxOxXr169fPny+fPn1//93bJlBUAAsQADZMEBxj9/GBxb2P/9+S/R8u3vzxuyaX8ZHv3j8/YGms3w8ycQARmi2eE37t4ACCDGR4/uSkrKAS35B3TT////wADOgLOBIaXIyjBlwxKAAGKRXjCB0SOEaeu+/y9fMnz4AHQxCP348R/o+l+//sMZQBNLEvif3AcIIMZbty7Ly6t9ZmXl+fXj/38GoHH/UcGfP79//BBiYHjy9+8/oUkNAAHEwt1V/vI/KBY/QSISFqM/GBg+MzB8A6PfYC5EFiDAABqgW776MP0rAAAAAElFTkSuQmCC" />
+                                @_localization.Getkey("str-english")
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="~/img/user.png" alt=""
+                                 style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">@User.Identity.Name</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            @if (_signInManager.IsSignedIn(User))
+                            {
+                                <a asp-action="Logout" asp-controller="Home" type="submit" class="dropdown-item">Log Out</a>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            @RenderBody()
+        </div>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/chart/chart.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="~/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="~/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/js/main.js"></script>
+</body>
+
+</html>

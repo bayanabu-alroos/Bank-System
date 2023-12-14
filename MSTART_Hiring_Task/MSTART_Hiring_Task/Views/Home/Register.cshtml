@@ -1,0 +1,72 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+<!-- Sign Up Start -->
+<div class="container-fluid">
+    <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="col-12 col-sm-8 col-md-10 col-lg-8 col-xl-6">
+            <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="index.html" class="">
+                        <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>@_localization.Getkey("str-title")</h3>
+                    </a>
+                    <h3>@_localization.Getkey("str-sigup")</h3>
+                </div>
+                <form asp-action="Register" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingText" asp-for="First_Name" />
+                        <label for="floatingText" asp-for="First_Name"></label>
+                        <span class="text-danger" asp-validation-for="First_Name"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingText" asp-for="Last_Name" />
+                        <label for="floatingText" asp-for="Last_Name"></label>
+                        <span class="text-danger" asp-validation-for="Last_Name"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="floatingText" asp-for="Date_Of_Birth" />
+                        <label for="floatingText" asp-for="Date_Of_Birth"></label>
+                        <span class="text-danger" asp-validation-for="Date_Of_Birth"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        @Html.DropDownList("Gender",Html.GetEnumSelectList<Gender>(),"--Choose Gender --",new{@class="form-select "})
+                        <label for="floatingSelect" asp-for="Gender"></label>
+                        <span class="text-danger" asp-validation-for="Gender"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingText" asp-for="UserName" />
+                        <label for="floatingText" asp-for="UserName"></label>
+                        <span class="text-danger" asp-validation-for="UserName"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" asp-for="Email" />
+                        <label for="floatingInput" asp-for="Email"></label>
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingText" asp-for="PhoneNumber" />
+                        <label for="floatingText" asp-for="PhoneNumber"></label>
+                        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" id="floatingPassword" asp-for="Password" />
+                        <label for="floatingPassword" asp-for="Password"></label>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" id="floatingPassword" asp-for="ConfirmPassword" />
+                        <label for="floatingPassword" asp-for="ConfirmPassword"></label>
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">@_localization.Getkey("str-sigup")</button>
+                </form>
+                <p class="text-center mb-0">@_localization.Getkey("str-already")  <a asp-controller="Home" asp-action="Index">@_localization.Getkey("str-login-masseage")</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sign Up End -->
+

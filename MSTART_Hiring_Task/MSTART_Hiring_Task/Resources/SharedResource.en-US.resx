@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str-account-create" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="str-accounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="str-already" xml:space="preserve">
+    <value>Already have an Account?</value>
+  </data>
+  <data name="str-arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="str-attempt-login" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="str-createaccount" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="str-createrole" xml:space="preserve">
+    <value>Create Role</value>
+  </data>
+  <data name="str-createtransactions" xml:space="preserve">
+    <value>Create Transaction</value>
+  </data>
+  <data name="str-createuser" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="str-date-of-birth" xml:space="preserve">
+    <value>Date Of Birth</value>
+  </data>
+  <data name="str-date-of-birth-error" xml:space="preserve">
+    <value>Please enter a Date Of Birth</value>
+  </data>
+  <data name="str-email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="str-email-error" xml:space="preserve">
+    <value>The Email field is required.</value>
+  </data>
+  <data name="str-email-exist" xml:space="preserve">
+    <value>Email already exists.</value>
+  </data>
+  <data name="str-english" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="str-first-name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="str-first-name-error" xml:space="preserve">
+    <value>The  First Name field is required.</value>
+  </data>
+  <data name="str-gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="str-gender-error" xml:space="preserve">
+    <value>Please Select a User Gender field.</value>
+  </data>
+  <data name="str-languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="str-last-name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="str-last-name-error" xml:space="preserve">
+    <value>The  Last Name field is required.</value>
+  </data>
+  <data name="str-listofaccounts" xml:space="preserve">
+    <value>List of Accounts</value>
+  </data>
+  <data name="str-listoftransactions" xml:space="preserve">
+    <value>List of Transactions</value>
+  </data>
+  <data name="str-listrolesusers" xml:space="preserve">
+    <value>List of Roles User</value>
+  </data>
+  <data name="str-login-masseage" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="str-login-succf" xml:space="preserve">
+    <value>The login is successful!</value>
+  </data>
+  <data name="str-logout" xml:space="preserve">
+    <value>Logout successfully!</value>
+  </data>
+  <data name="str-password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="str-password-confirm" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="str-password-confirm-compare" xml:space="preserve">
+    <value>Passwords did not match</value>
+  </data>
+  <data name="str-password-confirm-error" xml:space="preserve">
+    <value>The  Confirm Password field is required.</value>
+  </data>
+  <data name="str-password-error" xml:space="preserve">
+    <value>The Password field is required.</value>
+  </data>
+  <data name="str-password-regular" xml:space="preserve">
+    <value>Passwords must have at least one uppercase, one lowercase, one digit, and one special character, and be at least 8 characters long.</value>
+  </data>
+  <data name="str-phone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="str-phone-error" xml:space="preserve">
+    <value>The  Phone Number field is required.</value>
+  </data>
+  <data name="str-rememberme" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="str-rolesusers" xml:space="preserve">
+    <value>Roles Users</value>
+  </data>
+  <data name="str-signup" xml:space="preserve">
+    <value>Register created successfully!</value>
+  </data>
+  <data name="str-sigup" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="str-title" xml:space="preserve">
+    <value>MSTART Hiring Task</value>
+  </data>
+  <data name="str-transactions" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="str-username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="str-username-error" xml:space="preserve">
+    <value>The  Username field is required.</value>
+  </data>
+  <data name="str-username-exist" xml:space="preserve">
+    <value>Username already exists.</value>
+  </data>
+  <data name="str-username-length" xml:space="preserve">
+    <value>The username must be between 4 and 50 characters long.</value>
+  </data>
+  <data name="str-username-regular" xml:space="preserve">
+    <value>Only English letters and numbers are allowed.</value>
+  </data>
+  <data name="str-users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="str-userslist" xml:space="preserve">
+    <value>List of Users</value>
+  </data>
+  <data name="str-welcomeadmin" xml:space="preserve">
+    <value>Welcome, Admin!</value>
+  </data>
+  <data name="str-welcomeuser" xml:space="preserve">
+    <value>Welcome, User!</value>
+  </data>
+</root>

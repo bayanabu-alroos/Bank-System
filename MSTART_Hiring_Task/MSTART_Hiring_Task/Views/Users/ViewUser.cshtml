@@ -1,0 +1,100 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "ViewUser";
+}
+
+<!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h3 class="mb-0">View User </h3>
+        </div>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        <div class="table-responsive">
+            <table class="table text-start align-middle  table-hover mb-0">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            Username   :
+                        </th>
+                        <th scope="row">
+                            @Model.UserName
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            E-mail   :
+                        </th>
+                        <th scope="row">
+                            @Model.Email
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            First Name   :
+                        </th>
+                        <th scope="row">
+                            @Model.First_Name
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Last Name   :
+                        </th>
+                        <th scope="row">
+                            @Model.Last_Name
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Gender  :
+                        </th>
+                        <th scope="row">
+                            @Model.Gender
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Date Of Birth  :
+                        </th>
+                        <th scope="row">
+                            @Model.Date_Of_Birth.Value.ToString("dd-MM-yyyy")
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Status User  :
+                        </th>
+                        <th scope="row">
+                            @Model.Status
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Phone Number User  :
+                        </th>
+                        <th scope="row">
+                            @Model.PhoneNumber
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Date Of Create User  :
+                        </th>
+                        <th scope="row">
+                            @Model.Server_DateTime
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->

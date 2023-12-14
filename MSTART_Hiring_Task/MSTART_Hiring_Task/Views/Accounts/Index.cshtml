@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Account>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@functions {
+    public string GetStatusClass(AccountStatus status)
+    {
+        switch (status)
+        {
+            case AccountStatus.Approved:
+                return "text-success";
+            case AccountStatus.Pending:
+                return "text-muted";
+            case AccountStatus.InProgress:
+                return "text-warning";
+            case AccountStatus.Deleted:
+                return "text-danger";
+            default:
+                return "text-info"; // Default class or another Bootstrap text class
+        }
+    }
+}
+
+
+<!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h3 class="mb-0"> List of Accounts </h3>
+            <form class="d-flex mt-3 mb-4" asp-action="Index" method="get">
+                <input class="form-control me-1" type="search" name="searchTerm" placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-success" type="submit" value="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+        <div class="table-responsive">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["DangerMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["DangerMessage"]
+                </div>
+            }
+            <form method="post" asp-action="DeleteSelectedAccounts">
+                <a asp-action="Create" asp-controller="Accounts" class="btn btn-outline-success  mb-5">
+                    Create New Account
+                </a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger   mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete Selected Accounts
+                </button>
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-white">
+                            <th scope="col">#</th>
+                            <th scope="col">@Html.DisplayNameFor(m=>m.User) </th>
+                            <th scope="col">@Html.DisplayNameFor(m=>m.Account_Number) </th>
+                            <th scope="col">@Html.DisplayNameFor(m=>m.Balance) </th>
+                            <th scope="col">@Html.DisplayNameFor(m=>m.Currency) </th>
+                            <th scope="col">@Html.DisplayNameFor(m=>m.Status) </th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var account in Model)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    <input type="checkbox" class="form-check-input" name="accountIds" value="@account.ID" />
+                                    <label class="form-check-label">@account.ID</label>
+                                </th>
+                                <th scope="row">
+                                    @if (account.User != null)
+                                    {
+                                        @:@account.User.First_Name @account.User.Last_Name
+                                    }
+                                    else
+                                    {
+                                        @:No associated user
+                                    }
+                                </th>
+                                <th scope="row">@account.Account_Number</th>
+                                <th scope="row">@account.Balance</th>
+                                <th scope="row">@account.Currency</th>
+                                <th scope="row" class="@GetStatusClass(account.Status)">@account.Status</th>
+                                <th>
+                                    <a asp-action="ViewAccount" asp-controller="Accounts" asp-route-id="@account.ID"
+                                       class="btn btn-outline-info">View</a>
+                                    <a asp-action="Edit" asp-controller="Accounts" asp-route-id="@account.ID"
+                                       class="btn btn-outline-warning">Edit</a>
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- Modal -->
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content bg-secondary">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Selected Accounts</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure Delete Account ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
+

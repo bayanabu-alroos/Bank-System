@@ -1,0 +1,57 @@
+﻿@model EditRoleViewModel
+@{
+    ViewData["Title"] = "EditRole";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h3 class="mb-4">Update Role</h3>
+                <form asp-action="EditRole" method="post">
+                    <div asp-validation-summary="All" class=" alert-danger"></div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="Id">
+                            <label for="floatingInput" asp-for="Id"></label>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" asp-for="RoleName">
+                            <label for="floatingInput" asp-for="RoleName"></label>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-success m-2 " type="submit">Update Role</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h3 class="mb-4">Users in this Role</h3>
+                <hr />
+                <div class="mb-6">
+                    @if (Model.Users.Any())
+                    {
+                        foreach (var user in Model.Users)
+                        {
+                            <h4 class=" mb-2">@user</h4>
+                        }
+                    }
+                    else
+                    {
+                        <h4 class="mb-2 text-danger">No user in this role .......</h4>
+                    }
+                </div>
+
+                <a asp-action="EditUserInRole" asp-route-id="@Model.Id" class="btn btn-primary">Add or Remove User From This Role </a>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MSTART_Hiring_Task.props" />
+</Project>

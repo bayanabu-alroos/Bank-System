@@ -1,0 +1,68 @@
+﻿@model Transaction
+@{
+    ViewData["Title"] = "ReverseTransaction";
+}
+
+
+<!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h3 class="mb-0">Reverse Transaction</h3>
+        </div>
+        Are you sure you want to reverse the following transaction?
+        <div class="table-responsive">
+            <table class="table text-start align-middle  table-hover mb-0">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            Full Name    :
+                        </th>
+                        <th scope="row">
+                            @Model.User?.First_Name
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account  Number   :
+                        </th>
+                        <th scope="row">
+                            @Model.Account.Account_Number
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account Amount   :
+                        </th>
+                        <th scope="row">
+                            @Model.Amount
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            Account  Status :
+                        </th>
+                        <th scope="row">
+                            @Model.Status
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account  Type Transaction:
+                        </th>
+                        <th scope="row">
+                            @Model.Type
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <form asp-action="ReverseTransaction" method="post">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Confirm Reverse" class="btn btn-danger" />
+                <a asp-action="Index" asp-controller="Transactions" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+

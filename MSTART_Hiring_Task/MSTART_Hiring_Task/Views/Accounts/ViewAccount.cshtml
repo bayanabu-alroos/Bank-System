@@ -1,0 +1,75 @@
+﻿@model Account
+@{
+    ViewData["Title"] = "ViewAccount";
+}
+<!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h3 class="mb-0">View User </h3>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        <div class="table-responsive">
+            <table class="table text-start align-middle  table-hover mb-0">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            Full Name    :
+                        </th>
+                        <th scope="row">
+                            @Model.User.First_Name @Model.User.Last_Name
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account  Number   :
+                        </th>
+                        <th scope="row">
+                            @Model.Account_Number
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account Balance   :
+                        </th>
+                        <th scope="row">
+                            @Model.Balance
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account Currency   :
+                        </th>
+                        <th scope="row">
+                            @Model.Currency
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Account  Status :
+                        </th>
+                        <th scope="row">
+                            @Model.Status
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            Date Of Create Account   :
+                        </th>
+                        <th scope="row">
+                            @Model.Server_DateTime.ToString("dd-MM-yyyy")
+                        </th>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
