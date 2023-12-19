@@ -409,74 +409,77 @@ namespace MSTART_Hiring_Task.Controllers
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> UserProfile(string id, EditUserProfile model)
+        public async Task<IActionResult> UserProfile(EditUserProfile model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = await _userManager.FindByIdAsync(id);
-                //var user = await _userManager.FindByIdAsync(model.Id);
-
-                if (user == null)
+                if (ModelState.IsValid)
                 {
-                    return View("NotFoundUser");
-                }
-
-                if (model.ExistingImage != null)
-                {
-                    string imageName = UploadFile(model);
-                    user.ImageProfile = imageName;
-                }
-
-                user.First_Name = model.First_Name;
-                user.Last_Name = model.Last_Name;
-                user.UserName = model.UserName;
-                user.Email = model.Email;
-                user.Gender = model.Gender;
-                user.PhoneNumber = model.PhoneNumber;
-                user.Date_Of_Birth = model.Date_Of_Birth;
-
-                var result = await _userManager.UpdateAsync(user);
-
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("UserProfile", new { id = user.Id });
-                }
-                else
-                {
-                    foreach (var error in result.Errors)
+                    string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user == null)
                     {
-                        ModelState.AddModelError(string.Empty, error.Description);
+                        return View("NotFoundUser");
+                    }
+                    string imageName = "~/Image/" + UploadFile(model);
+                   
+                    user.First_Name = model.First_Name;
+                    user.Last_Name = model.Last_Name;
+                    user.UserName = model.UserName;
+                    user.Email = model.Email;
+                    user.Gender = model.Gender;
+                    user.PhoneNumber = model.PhoneNumber;
+                    user.Date_Of_Birth = model.Date_Of_Birth;
+                    user.ImageProfile = imageName;
+
+
+                    var result = await _userManager.UpdateAsync(user);
+
+                    if (result.Succeeded)
+                    {
+                        TempData["SuccessMessage"] = "User Profile Update successfully!";
+                        return RedirectToAction("UserProfile", new { id = user.Id });
+                    }
+                    else
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred while updating the user profile.");
+            }
+
             return View(model);
         }
 
         public string UploadFile(UploadImageViewModel model)
         {
-            string newFileName = null;
-            string fullFilePath = "";
-
-            if (model.PictureProfile != null)
+            string uploadFileName = string.Empty;
+            try
             {
-                string folderPath = Path.Combine(_webHostEnvironment.WebRootPath, "images");
-                string sanitizedFileName = string.Concat(
-                    Guid.NewGuid().ToString(),
-                    "_",
-                    DateTime.Now.ToString("yyyyMMddHHmmssfff"),
-                    Path.GetExtension(model.PictureProfile.FileName)
-                );
-
-                newFileName = Path.Combine(folderPath, sanitizedFileName);
-                fullFilePath = Path.Combine(folderPath, sanitizedFileName);
-
-                using (var fileStream = new FileStream(fullFilePath, FileMode.Create))
+                if (model.PictureProfile != null)
                 {
-                    model.PictureProfile.CopyTo(fileStream);
+                    string uploadFolder = Path.Combine(_webHostEnvironment.WebRootPath, "Image");
+                    uploadFileName = Guid.NewGuid().ToString() + "_" + model.PictureProfile.FileName;
+                    string fullPath = Path.Combine(uploadFolder, uploadFileName);
+                    using (var fileStream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        model.PictureProfile.CopyTo(fileStream);
+                    }
                 }
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An unexpected error occurred while uploading the image.");
             }
 
-            return fullFilePath;
+            return uploadFileName;
         }
 
 

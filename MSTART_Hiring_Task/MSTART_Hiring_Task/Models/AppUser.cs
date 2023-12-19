@@ -15,7 +15,7 @@ namespace MSTART_Hiring_Task.Models
         public UserStatus Status { get; set; }
         public Gender? Gender { get; set; }
         public DateTime? Date_Of_Birth { get; set; }
-        public string ImageProfile { get; set; }
+        public string? ImageProfile { get; set; }
         public DateTime Server_DateTime { get; set; } = DateTime.Now;
         public DateTime DateTime_UTC { get; set; } = DateTime.Now;
         public DateTime Update_DateTime_UTC { get; set; } = DateTime.Now;

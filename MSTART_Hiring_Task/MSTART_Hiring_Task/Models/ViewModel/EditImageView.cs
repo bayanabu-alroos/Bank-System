@@ -1,7 +1,9 @@
-﻿namespace MSTART_Hiring_Task.Models.ViewModel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MSTART_Hiring_Task.Models.ViewModel
 {
     public class EditImageView:UploadImageViewModel
     {
-        public string ExistingImage { get; set; }
+        public string? ExistingImage { get; set; }
     }
 }
