@@ -6,10 +6,8 @@ using MSTART_Hiring_Task.Data;
 using MSTART_Hiring_Task.Models;
 using MSTART_Hiring_Task.Models.ViewModel;
 using MSTART_Hiring_Task.Servies;
-using System.Data;
 using System.Diagnostics;
 using System.Security.Claims;
-using System.Text;
 
 namespace MSTART_Hiring_Task.Controllers
 {
@@ -481,8 +479,6 @@ namespace MSTART_Hiring_Task.Controllers
 
             return uploadFileName;
         }
-
-
 
 
         public IActionResult Privacy()
