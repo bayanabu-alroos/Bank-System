@@ -88,9 +88,7 @@
                         <nav class="nav nav-borders">
                             <a class="nav-link " onclick="showUpdateProfileForm()" class="nav-link">Update Profile </a>
                             <a class="nav-link" onclick="showChangePasswordForm()" class="nav-link">Change Password</a>
-                           
                         </nav>
-                       
                     </div>
                     <div class="card-body">
                         @if (TempData["SuccessMessage"] != null)
@@ -140,8 +138,7 @@
                                 </div>
                             </div>
                             <div class="row g-3">
-                                <div class="col form-floating mb-3">
-                                    <label for="floatingSelect" asp-for="PictureProfile"></label>
+                                <div class="col  mb-3">
                                     <input class="form-control form-control-lg bg-dark" type="file" class="form-control" asp-for="PictureProfile" >
                                     <span class="text-danger" asp-validation-for="PictureProfile"></span>
                                 </div>
