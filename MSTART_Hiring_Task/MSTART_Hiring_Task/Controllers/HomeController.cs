@@ -383,6 +383,8 @@ namespace MSTART_Hiring_Task.Controllers
             return View();
         }
         #endregion
+
+        #region Update User Profile 
         [HttpGet]
         public async Task<IActionResult> UserProfile(string userId)
         {
@@ -392,22 +394,27 @@ namespace MSTART_Hiring_Task.Controllers
             {
                 return View("NotFoundUser");
             }
-            var model = new EditUserProfile
+            var userProfileViewModel = new UserProfileViewModel
             {
-                Id = user.Id,
-                First_Name = user.First_Name,
-                Last_Name = user.Last_Name,
-                UserName = user.UserName,
-                Email = user.Email,
-                Gender = user.Gender,
-                PhoneNumber = user.PhoneNumber,
-                Date_Of_Birth = user.Date_Of_Birth,
-                ExistingImage = user.ImageProfile,
+                EditUserProfile = new EditUserProfile
+                {
+                    Id = user.Id,
+                    First_Name = user.First_Name,
+                    Last_Name = user.Last_Name,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    Gender = (Models.Enum.Gender)user.Gender,
+                    PhoneNumber = user.PhoneNumber,
+                    Date_Of_Birth = user.Date_Of_Birth,
+                    ExistingImage = user.ImageProfile,
+                },
+                ChangePasswordViewModel = new ChangePasswordViewModel()
             };
-            return View(model);
+
+            return View(userProfileViewModel);
         }
         [HttpPost]
-        public async Task<IActionResult> UserProfile(EditUserProfile model)
+        public async Task<IActionResult> UserProfile(UserProfileViewModel model)
         {
             try
             {
@@ -419,17 +426,15 @@ namespace MSTART_Hiring_Task.Controllers
                     {
                         return View("NotFoundUser");
                     }
-                    string imageName = "~/Image/" + UploadFile(model);
-                   
-                    user.First_Name = model.First_Name;
-                    user.Last_Name = model.Last_Name;
-                    user.UserName = model.UserName;
-                    user.Email = model.Email;
-                    user.Gender = model.Gender;
-                    user.PhoneNumber = model.PhoneNumber;
-                    user.Date_Of_Birth = model.Date_Of_Birth;
+                    string imageName = "~/Image/" + UploadFile(model.EditUserProfile);
+                    user.First_Name = model.EditUserProfile.First_Name;
+                    user.Last_Name = model.EditUserProfile.Last_Name;
+                    user.UserName = model.EditUserProfile.UserName;
+                    user.Email = model.EditUserProfile.Email;
+                    user.Gender = model.EditUserProfile.Gender;
+                    user.PhoneNumber = model.EditUserProfile.PhoneNumber;
+                    user.Date_Of_Birth = model.EditUserProfile.Date_Of_Birth;
                     user.ImageProfile = imageName;
-
 
                     var result = await _userManager.UpdateAsync(user);
 
@@ -452,9 +457,11 @@ namespace MSTART_Hiring_Task.Controllers
                 ModelState.AddModelError(string.Empty, "An unexpected error occurred while updating the user profile.");
             }
 
-            return View(model);
+            return View("UserProfile", model);
         }
+        #endregion
 
+        #region Upload File 
         public string UploadFile(UploadImageViewModel model)
         {
             string uploadFileName = string.Empty;
@@ -479,7 +486,46 @@ namespace MSTART_Hiring_Task.Controllers
 
             return uploadFileName;
         }
+        #endregion
 
+        #region Change Password
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(UserProfileViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user == null)
+                    {
+                        return View("NotFoundUser");
+                    }
+                    var result = await _userManager.ChangePasswordAsync(user, model.ChangePasswordViewModel.CurrentPassword, model.ChangePasswordViewModel.NewPassword);
+
+                    if (result.Succeeded)
+                    {
+                        TempData["SuccessMessage"] = "Update Change Password successfully!";
+                        return RedirectToAction("UserProfile", new { id = user.Id });
+                    }
+                    else
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred while updating the user profile.");
+            }
+            return View("UserProfile", model);
+        }
+        #endregion
 
         public IActionResult Privacy()
         {

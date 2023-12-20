@@ -15,7 +15,7 @@ namespace MSTART_Hiring_Task.Models.ViewModel
         [Required]
         public string Last_Name { get; set; }
         [Required]
-        public Gender? Gender { get; set; }
+        public Gender Gender { get; set; }
         [Required]
         public DateTime? Date_Of_Birth { get; set; }
     }
