@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MSTART_Hiring_Task")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+570e9d06023dd9f89d7e0d6e73285681eef68518")]
 [assembly: System.Reflection.AssemblyProductAttribute("MSTART_Hiring_Task")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MSTART_Hiring_Task")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

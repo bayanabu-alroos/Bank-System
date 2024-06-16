@@ -151,7 +151,6 @@
                             <button class="btn btn-lg btn-success m-2 " type="submit">Update Profile</button>
                         </form>
                         <form id="changePasswordForm" asp-action="ChangePassword" method="post" asp-controller="Home" style="display:none;">
-                            <div asp-validation-summary="All" class="text-danger"></div>
                             <div class="col form-floating mb-3">
                                 <input type="password" class="form-control" asp-for="ChangePasswordViewModel.CurrentPassword">
                                 <label for="floatingInput" asp-for="ChangePasswordViewModel.CurrentPassword"></label>

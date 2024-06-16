@@ -2128,6 +2128,13 @@ C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_H
 C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\scopedcss\bundle\MSTART_Hiring_Task.styles.css
 C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\scopedcss\projectbundle\MSTART_Hiring_Task.bundle.scp.css
-C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\MSTART_Hiring_Task.csproj.CopyComplete
 C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\MSTART_Hiring_Task.genruntimeconfig.cache
 C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\ref\MSTART_Hiring_Task.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\Google.Apis.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\Google.Apis.Auth.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\Google.Apis.Core.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\Google.Apis.Drive.v3.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\System.Management.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\bayan\Desktop\Bayan\C# Training\Bank-System\MSTART_Hiring_Task\MSTART_Hiring_Task\obj\Debug\net7.0\MSTART_H.6F385899.Up2Date

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aO1Piunv7C39ccKcqx94IdxSr7SI/L3l3Mic97Y+hxY=",
+  "Hash": "/uh+3P8YfnedqKBVTUgJV1qMLLArbApsN5PpE6/aH2k=",
   "Source": "MSTART_Hiring_Task",
   "BasePath": "_content/MSTART_Hiring_Task",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\bayan\\Desktop\\Bayan\\C# Training\\Bank-System\\MSTART_Hiring_Task\\MSTART_Hiring_Task\\wwwroot\\Image\\6ac403b9-8ae3-4242-9ab2-7d5787654725_Screenshot 2023-12-13 191952.png",
+      "SourceId": "MSTART_Hiring_Task",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bayan\\Desktop\\Bayan\\C# Training\\Bank-System\\MSTART_Hiring_Task\\MSTART_Hiring_Task\\wwwroot\\",
+      "BasePath": "_content/MSTART_Hiring_Task",
+      "RelativePath": "Image/6ac403b9-8ae3-4242-9ab2-7d5787654725_Screenshot 2023-12-13 191952.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\6ac403b9-8ae3-4242-9ab2-7d5787654725_Screenshot 2023-12-13 191952.png"
     },
     {
       "Identity": "C:\\Users\\bayan\\Desktop\\Bayan\\C# Training\\Bank-System\\MSTART_Hiring_Task\\MSTART_Hiring_Task\\wwwroot\\Image\\b986900b-ee3a-4641-a699-81140f3474ed_Screenshot 2023-12-13 190236.png",

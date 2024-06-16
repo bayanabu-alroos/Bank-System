@@ -17,6 +17,7 @@ namespace MSTART_Hiring_Task.Models.ViewModel
         [Required]
         public Gender Gender { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime? Date_Of_Birth { get; set; }
     }
 }

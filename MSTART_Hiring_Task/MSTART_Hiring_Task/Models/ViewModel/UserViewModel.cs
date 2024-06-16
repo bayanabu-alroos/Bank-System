@@ -18,6 +18,7 @@ namespace MSTART_Hiring_Task.Models.ViewModel
         [Required]
         public string Last_Name { get; set; }
         [Required(ErrorMessage = "Please enter a Date Of Birth ")]
+        [DataType(DataType.Date)]
         public DateTime? Date_Of_Birth { get; set; }
         [Required(ErrorMessage = "Please Selected a User Gender field .")]
         public Gender? Gender { get; set; }

@@ -96,6 +96,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Image\6ac403b9-8ae3-4242-9ab2-7d5787654725_Screenshot 2023-12-13 191952.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>MSTART_Hiring_Task</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MSTART_Hiring_Task</BasePath>
+      <RelativePath>Image/6ac403b9-8ae3-4242-9ab2-7d5787654725_Screenshot 2023-12-13 191952.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Image\6ac403b9-8ae3-4242-9ab2-7d5787654725_Screenshot 2023-12-13 191952.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Image\b986900b-ee3a-4641-a699-81140f3474ed_Screenshot 2023-12-13 190236.png))">
       <SourceType>Package</SourceType>
       <SourceId>MSTART_Hiring_Task</SourceId>

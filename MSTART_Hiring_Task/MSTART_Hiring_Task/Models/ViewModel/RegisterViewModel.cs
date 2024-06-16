@@ -19,6 +19,8 @@ namespace MSTART_Hiring_Task.Models.ViewModel
 
         [Display(Name = "str-date-of-birth")]
         [Required(ErrorMessage = "str-date-of-birth-error")]
+        [DataType(DataType.Date)]
+
         public DateTime Date_Of_Birth { get; set; }
         [Display(Name = "str-username")]
         [Required(ErrorMessage = "str-username-error")]
